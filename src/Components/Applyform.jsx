@@ -17,7 +17,7 @@ const ApplyForm = () => {
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
-        const response = await fetch("http://localhost:8080/api/company");
+        const response = await fetch("https://backendclgattendence.onrender.com/api/company");
         if (!response.ok) {
           throw new Error("Failed to fetch companies");
         }
@@ -83,7 +83,7 @@ const ApplyForm = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:8080/api/submit", {
+      const response = await fetch("https://backendclgattendence.onrender.com/api/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

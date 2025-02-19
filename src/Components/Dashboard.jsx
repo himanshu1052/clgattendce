@@ -17,7 +17,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchRegisteredUsers = async () => {
       try {
-        const response = await fetch("http://localhost:8080/api/submissions");
+        const response = await fetch("https://backendclgattendence.onrender.com/api/submissions");
         if (!response.ok) throw new Error("Failed to fetch submissions");
     
         const result = await response.json();
@@ -51,7 +51,7 @@ const Dashboard = () => {
 
     const fetchContactUsers = async () => {
       try {
-        const response = await fetch("http://localhost:8080/api/messages");
+        const response = await fetch("https://backendclgattendence.onrender.com/api/messages");
         if (!response.ok) throw new Error("Failed to fetch contact form submissions");
         const data = await response.json();
         setContactUsers(data);
@@ -62,7 +62,7 @@ const Dashboard = () => {
 
     const fetchCompanies = async () => {
       try {
-        const response = await fetch("http://localhost:8080/api/company");
+        const response = await fetch("https://backendclgattendence.onrender.com/api/company");
         if (!response.ok) throw new Error("Failed to fetch company data");
         const data = await response.json();
         setCompanies(data);
@@ -73,7 +73,7 @@ const Dashboard = () => {
 
     const fetchAllSubmissions = async () => {
       try {
-        const response = await fetch("http://localhost:8080/api/submissions");
+        const response = await fetch("https://backendclgattendence.onrender.com/api/submissions");
         if (!response.ok) throw new Error("Failed to fetch all submissions");
         const data = await response.json();
         setAllSubmissions(data.data);
@@ -95,7 +95,7 @@ const Dashboard = () => {
       return;
     }
     try {
-      const response = await fetch("http://localhost:8080/api/company", {
+      const response = await fetch("https://backendclgattendence.onrender.com/api/company", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: newCompany }),
@@ -112,7 +112,7 @@ const Dashboard = () => {
 
   const handleRemoveCompany = async (companyId) => {
     try {
-      const response = await fetch(`http://localhost:8080/api/company/${companyId}`, {
+      const response = await fetch(`https://backendclgattendence.onrender.com/api/company/${companyId}`, {
         method: "DELETE",
       });
       if (!response.ok) throw new Error("Failed to remove company.");
